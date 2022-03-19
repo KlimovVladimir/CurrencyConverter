@@ -2,16 +2,24 @@ package com.example.currencyconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.ListFragment;
 
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.widget.EditText;
+import android.widget.Toolbar;
+
+import com.example.currencyconverter.fragments.FragmentConvert;
+import com.example.currencyconverter.fragments.FragmentList;
+import com.example.currencyconverter.json.Message;
 
 public class MainActivity extends AppCompatActivity {
 
     private static MainActivity instance;
-    //public static ListFragment listFragment;
-    //public static FilmFragment filmFragment;
+    public static FragmentList listFragment;
+    public static FragmentConvert convertFragment;
     public static FragmentTransaction fTrans;
+    public static EditText editTextFrom, editTextTo;
 
     public static MainActivity getInstance() {
         return instance;
@@ -22,16 +30,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         instance = this;
         setContentView(R.layout.activity_main);
-        //listFragment = new ListFragment();
-        //filmFragment = new FilmFragment();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        listFragment = new FragmentList();
+        convertFragment = new FragmentConvert();
 
         Runnable runnable = new Runnable() {
             public void run() {
                 while (!App.getInstance().initFinish) {
                     SystemClock.sleep(100);}
-                //fTrans = getSupportFragmentManager().beginTransaction();
-                //fTrans.add(R.id.ListFragment, MainActivity.listFragment);
-                //fTrans.commit();
+                fTrans = getSupportFragmentManager().beginTransaction();
+                fTrans.add(R.id.FrameLayoutMain, MainActivity.convertFragment);
+                fTrans.commit();
             }
         };
         Thread thread = new Thread(runnable);

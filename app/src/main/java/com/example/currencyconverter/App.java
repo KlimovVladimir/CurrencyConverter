@@ -25,9 +25,13 @@ public class App extends Application {
     private static final String TAG = "###DEBUG###";
 
     public Valutes response_json = new Valutes();
-    Map<String,Message> valute;
+    public Map<String,Message> valute;
 
     public boolean initFinish = false;
+
+
+    public static String currencyTo;
+    public static boolean currency_selected = false;
 
     public static App getInstance() {
         return instance;
@@ -50,12 +54,12 @@ public class App extends Application {
             public void onResponse(Call<Valutes> call, Response<Valutes> response) {
                 response_json.setValute(response.body().getValute());
                 valute = response_json.getValute();
+                currencyTo = "USD";
                 if (response.isSuccessful()) {
                     Log.i(TAG, "Success " + Integer.toString(response.code()));
                 } else {
                     Log.i(TAG, "Fail " + Integer.toString(response.code()));
                 }
-                init();
                 initFinish = true;
             }
 
@@ -64,9 +68,5 @@ public class App extends Application {
                 Log.i(TAG, "can't open URL" + t);
             }
         });
-    }
-
-    public void init() {
-
     }
 }
