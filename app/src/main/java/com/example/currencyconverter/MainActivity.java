@@ -6,6 +6,7 @@ import androidx.fragment.app.ListFragment;
 
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toolbar;
 
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentList listFragment;
     public static FragmentConvert convertFragment;
     public static FragmentTransaction fTrans;
-    public static EditText editTextFrom, editTextTo;
+    public EditText editTextFrom, editTextTo, editTextCountFrom, getEditTextCountTo;
+    public Button updateButton;
 
     public static MainActivity getInstance() {
         return instance;

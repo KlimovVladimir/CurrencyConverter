@@ -15,73 +15,117 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="50">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="У меня есть"
-                android:textSize="18dp"
-                android:gravity="center"
-                android:textColor="@color/white" />
+                android:layout_weight="50"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/text_editFrom"
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="У меня есть"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/text_editFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Выберите валюту"
+                    android:longClickable="false"
+                    android:minHeight="50dp"
+                    android:padding="15dp"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/text_editCountFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/shape"
+                    android:hint="Введите кол-во"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:minHeight="50dp"
+                    android:padding="15dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Выберите валюту"
-                android:minHeight="50dp"
-                android:textColor="@color/white"
-                android:padding="15dp"
-                android:background="@drawable/shape"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:longClickable="false"/>
+                android:layout_weight="50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Хочу приобрести"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/text_editTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Выберите валюту"
+                    android:longClickable="false"
+                    android:minHeight="50dp"
+                    android:padding="15dp"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/text_editCountTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/shape"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint=""
+                    android:longClickable="false"
+                    android:minHeight="50dp"
+                    android:padding="15dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
+        <Button
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="50">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Хочу приобрести"
-                android:textSize="18dp"
-                android:gravity="center"
-                android:textColor="@color/white"
-                />
-
-            <EditText
-                android:id="@+id/text_editTo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Выберите валюту"
-                android:minHeight="50dp"
-                android:padding="15dp"
-                android:textColor="@color/white"
-                android:background="@drawable/shape"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:longClickable="false"/>
-        </LinearLayout>
+            android:layout_weight="50"
+            android:gravity="center"
+            android:text="Обновить курс" />
 
     </LinearLayout>
 

@@ -48,9 +48,6 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ListViewHolder
             i++;
         }
         String name = currency.getName();
-        //if (name.length() > 20) {
-        //    name = name.substring(0, 20) + "..";
-       // }
         holder.currency_name.setText(name);
 
         Message finalCurrency = currency;
